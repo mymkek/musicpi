@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/musicpi/static/css/main.802d0d96.css",
-    "main.js": "/musicpi/static/js/main.38a767fd.js",
+    "main.js": "/musicpi/static/js/main.af695f11.js",
     "static/js/787.2e58699b.chunk.js": "/musicpi/static/js/787.2e58699b.chunk.js",
     "index.html": "/musicpi/index.html",
     "main.802d0d96.css.map": "/musicpi/static/css/main.802d0d96.css.map",
-    "main.38a767fd.js.map": "/musicpi/static/js/main.38a767fd.js.map",
+    "main.af695f11.js.map": "/musicpi/static/js/main.af695f11.js.map",
     "787.2e58699b.chunk.js.map": "/musicpi/static/js/787.2e58699b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.802d0d96.css",
-    "static/js/main.38a767fd.js"
+    "static/js/main.af695f11.js"
   ]
 }
