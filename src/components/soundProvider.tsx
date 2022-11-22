@@ -17,6 +17,7 @@ export const SoundProvider = (props: SoundProviderProps) => {
     const [iterator, setIterator] = useState<any>(null);
     const [isPlaying, setPlaying] = useState<boolean>(false);
     const [octave, setOctave] = useState<number>(1);
+    const [delay, setDelay] = useState<number>(config.keyPlayDelay);
 
     useEffect(() => {
         Soundfont.instrument(new AudioContext(), 'acoustic_grand_piano', {
@@ -65,7 +66,7 @@ export const SoundProvider = (props: SoundProviderProps) => {
             playNone(keyboardData[nextPiVal + ((octave - 1) * 12) + 3].note)
         },
         // Delay in milliseconds or null to stop it
-        isPlaying ? config.keyPlayDelay : null,
+        isPlaying ? delay : null,
     )
 
     const handlePlay = () => {
@@ -79,7 +80,8 @@ export const SoundProvider = (props: SoundProviderProps) => {
 
     return (
         <>
-            <SettingPanel handlePlay={handlePlay} handlePause={handlePause} octave={octave} setOctave={setOctave}/>
+            <SettingPanel delay={delay} setDelay={setDelay} handlePlay={handlePlay} handlePause={handlePause}
+                          octave={octave} setOctave={setOctave}/>
             <Keyboard playNone={playNone} playedNote={playedNote}/>
         </>
     );

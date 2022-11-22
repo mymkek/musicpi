@@ -4,10 +4,9 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import PauseIcon from '@mui/icons-material/Pause';
-import {FormControl, InputLabel, MenuItem} from '@mui/material';
+import {FormControl, InputLabel, MenuItem, TextField} from '@mui/material';
 import Select from '@mui/material/Select';
 import {octaves} from "../utils/octaves";
-
 
 
 interface SettingPanelProps {
@@ -15,6 +14,8 @@ interface SettingPanelProps {
     handlePause: () => void;
     octave: number;
     setOctave: (octave: number) => void;
+    delay: number;
+    setDelay: (delay: number) => void;
 };
 
 export const SettingPanel = (props: SettingPanelProps) => {
@@ -22,7 +23,9 @@ export const SettingPanel = (props: SettingPanelProps) => {
         handlePlay,
         handlePause,
         octave,
-        setOctave
+        setOctave,
+        delay,
+        setDelay
     } = props;
 
 
@@ -46,7 +49,7 @@ export const SettingPanel = (props: SettingPanelProps) => {
                         setOctave(e.target.value as number)
                     }}
                     labelId='octave-select-label'
-                    label='Timezone'>
+                    label='Octave'>
                     {octaves.map((value) => (
                         <MenuItem key={value} value={value}>
                             {value}
@@ -54,6 +57,8 @@ export const SettingPanel = (props: SettingPanelProps) => {
                     ))}
                 </Select>
             </FormControl>
+            <TextField label="Delay" onChange={e => setDelay(Number(e.target.value))}
+                       variant="outlined" value={delay} type="number"/>
 
 
         </Box>
